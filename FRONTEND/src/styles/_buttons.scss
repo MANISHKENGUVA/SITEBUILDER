@@ -1,0 +1,170 @@
+// Button styles — ported from Artiqui's AUBUTTON visual contract.
+// Existing `.btn` markup keeps working while new UI can use `.au-button`.
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  min-height: 2.5rem;
+  padding: 0.58rem 0.95rem;
+  font-family: $font-sans;
+  font-size: 0.92rem;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: $color-text-inverse;
+  background: $color-spruce-base;
+  border: 1px solid transparent;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  transition: background-color $transition-fast, border-color $transition-fast,
+    color $transition-fast, box-shadow $transition-fast, transform $transition-fast;
+
+  &:hover:not(:disabled) {
+    background: $color-spruce-shade;
+    box-shadow: $shadow-md;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: $shadow-sm;
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba($color-spruce-base, 0.28);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    background: $color-border-light;
+    color: $color-text-muted;
+    border-color: $color-border-light;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  &.btn--primary {
+    background: $color-spruce-base;
+    color: $color-text-inverse;
+
+    &:hover:not(:disabled) {
+      background: $color-spruce-shade;
+    }
+  }
+
+  &.btn--secondary {
+    background: $color-bg-surface;
+    color: $color-spruce-shade;
+    border-color: $color-border-light;
+    box-shadow: $shadow-sm;
+
+    &:hover:not(:disabled) {
+      background: $color-spruce-tint;
+      border-color: #c0c6ff;
+      color: $color-spruce-shade;
+    }
+  }
+
+  &.btn--outline {
+    background: transparent;
+    color: $color-spruce-shade;
+    border-color: #9aa5ff;
+
+    &:hover:not(:disabled) {
+      background: $color-spruce-tint;
+      border-color: $color-spruce-base;
+    }
+  }
+
+  &.btn--ghost {
+    background: transparent;
+    color: $color-text-secondary;
+    border-color: transparent;
+    box-shadow: none;
+
+    &:hover:not(:disabled) {
+      background: $color-ink-tint;
+      color: $color-text-primary;
+      box-shadow: none;
+    }
+  }
+
+  &.btn--danger {
+    background: $color-error;
+    color: $color-text-inverse;
+
+    &:hover:not(:disabled) {
+      background: #b91c1c;
+    }
+  }
+
+  &.btn--link {
+    min-height: auto;
+    padding: 0;
+    background: transparent;
+    color: $color-spruce-base;
+    border-color: transparent;
+    box-shadow: none;
+
+    &:hover:not(:disabled) {
+      background: transparent;
+      color: $color-spruce-shade;
+      text-decoration: underline;
+      box-shadow: none;
+    }
+  }
+
+  &.btn--sm {
+    min-height: 2rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.84rem;
+  }
+
+  &.btn--loading {
+    position: relative;
+    color: transparent !important;
+    cursor: progress;
+    pointer-events: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 2px solid currentColor;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Back button variant
+.btn--back {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  min-height: auto;
+  padding: 0;
+  background: transparent;
+  color: $color-text-secondary;
+  border: none;
+  box-shadow: none;
+
+  &:hover:not(:disabled) {
+    background: transparent;
+    color: $color-text-primary;
+    box-shadow: none;
+  }
+}

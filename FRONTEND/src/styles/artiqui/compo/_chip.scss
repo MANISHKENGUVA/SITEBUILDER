@@ -1,0 +1,76 @@
+.au-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 1.85rem;
+  padding: 0.34rem 0.68rem;
+  border: 1px solid $border;
+  border-radius: $radius-full;
+  background: $surface;
+  color: $text-secondary;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: none;
+  transition: background-color $transition-fast, border-color $transition-fast, color $transition-fast;
+}
+
+.au-chip--default {
+  background: $neutral-100;
+  color: $text-secondary;
+}
+
+.au-chip--success {
+  background: $success-50;
+  border-color: $success-200;
+  color: $success-700;
+}
+
+.au-chip--danger {
+  background: $danger-50;
+  border-color: $danger-200;
+  color: $danger-700;
+}
+
+.au-chip--warning {
+  background: $warning-50;
+  border-color: $warning-200;
+  color: $warning-800;
+}
+
+.au-chip--selectable {
+  cursor: pointer;
+}
+
+.au-chip--selectable:hover {
+  background: $surface-hover;
+  border-color: $neutral-300;
+}
+
+.au-chip--selected {
+  background: $primary-base;
+  border-color: $primary-base;
+  color: $text-inverse;
+}
+
+.au-chip__content,
+.au-chip__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.au-chip__close {
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+  border: none;
+  border-radius: $radius-full;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.au-chip__close:hover {
+  background: rgba(0, 0, 0, 0.08);
+}

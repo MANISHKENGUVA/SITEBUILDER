@@ -1,0 +1,18 @@
+{
+  "name": "northline-portal",
+  "private": true,
+  "workspaces": [
+    "FRONTEND",
+    "BACKEND"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n frontend,backend \"npm:dev:frontend\" \"npm:dev:backend\"",
+    "dev:frontend": "npm run dev --workspace=northline-portal",
+    "dev:backend": "npm run dev --workspace=northline-api",
+    "build": "npm run build --workspace=northline-portal",
+    "test": "npm test --workspace=northline-api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

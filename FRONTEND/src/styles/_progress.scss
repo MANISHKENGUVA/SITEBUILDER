@@ -1,0 +1,107 @@
+// Progress tracker styles — aligned with Artiqui's stepper and progress tokens.
+// ProgressTracker.vue uses the `au-stepper` markup directly; these rules keep
+// the legacy `.progress-tracker` class names visually consistent if reused.
+
+.progress-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.progress-tracker__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.progress-tracker__step {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  position: relative;
+  padding: 0;
+}
+
+.progress-tracker__marker {
+  width: 2rem;
+  height: 2rem;
+  border-radius: $radius-full;
+  border: 2px solid #c0c6ff;
+  background: linear-gradient(180deg, $color-bg-surface 0%, $color-ink-tint 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-spruce-base;
+  flex-shrink: 0;
+  transition: all $transition-fast;
+}
+
+.progress-tracker__marker--completed {
+  border-color: $color-spruce-base;
+  background: linear-gradient(135deg, $color-spruce-base 0%, $color-spruce-shade 100%);
+  color: $color-text-inverse;
+}
+
+.progress-tracker__marker--current {
+  border-color: $color-spruce-base;
+  color: $color-spruce-base;
+}
+
+.progress-tracker__marker--blocked {
+  border-color: $color-warning;
+  color: $color-warning;
+}
+
+.progress-tracker__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.progress-tracker__label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin: 0;
+}
+
+.progress-tracker__status {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  margin: 0;
+}
+
+.progress-tracker__status--completed {
+  color: $color-success;
+}
+
+.progress-tracker__status--current {
+  color: $color-spruce-base;
+}
+
+.progress-tracker__status--upcoming {
+  color: $color-text-muted;
+}
+
+.progress-tracker__status--blocked {
+  color: $color-warning;
+}
+
+.progress-tracker__empty {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+@media (max-width: 767px) {
+  .progress-tracker__marker {
+    width: 2rem;
+    height: 2rem;
+  }
+}

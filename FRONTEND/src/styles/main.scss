@@ -1,0 +1,80 @@
+// Main stylesheet — imports component-level styles
+// Design tokens (_variables, _colors, _typography, _spacing) are imported globally via vite.config.js
+
+// Artiqui shared design system (ported from REACTALLGOPRO/packages/artiqui).
+// The Indigo theme is applied before the component styles so Artiqui's
+// `!default` tokens keep the app-level radius, shadow and motion values.
+@import "./artiqui/themes/theme1/index";
+@import "./artiqui/main";
+
+@import "./buttons.scss";
+@import "./cards.scss";
+@import "./forms.scss";
+@import "./navigation.scss";
+@import "./progress.scss";
+
+// Base styles
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text-primary;
+  background: $color-bg-body;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $color-spruce-base;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-sans;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-top: 0;
+}
+
+h1 { font-size: $font-size-3xl; line-height: $line-height-tight; }
+h2 { font-size: $font-size-2xl; line-height: $line-height-tight; }
+h3 { font-size: $font-size-xl; line-height: $line-height-tight; }
+h4 { font-size: $font-size-lg; line-height: $line-height-tight; }
+
+p {
+  margin: 0 0 $space-4;
+}
+
+ul, ol {
+  margin: 0 0 $space-4;
+  padding-left: $space-4;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

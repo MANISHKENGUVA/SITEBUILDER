@@ -1,0 +1,74 @@
+// Popover styles
+.au-popover {
+  position: fixed;
+  z-index: 1000;
+  min-width: 12rem;
+  max-width: 20rem;
+  padding: 0.9rem 1rem;
+  background: linear-gradient(180deg, $surface 0%, $surface-secondary 100%);
+  border: 1px solid rgba($primary-base, 0.16);
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  color: $text-primary;
+  left: var(--au-popover-left, 0);
+  top: var(--au-popover-top, 0);
+  transform: translate(-50%, -100%);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.au-popover--bottom {
+  transform: translate(-50%, 0.5rem);
+}
+
+.au-popover--top {
+  transform: translate(-50%, calc(-100% - 0.5rem));
+}
+
+.au-popover--left {
+  transform: translate(calc(-100% - 0.5rem), -50%);
+}
+
+.au-popover--right {
+  transform: translate(0.5rem, -50%);
+}
+
+.au-popover__arrow {
+  position: absolute;
+  width: 0.85rem;
+  height: 0.85rem;
+  background-color: inherit;
+  border-left: 1px solid rgba($primary-base, 0.18);
+  border-top: 1px solid rgba($primary-base, 0.18);
+  transform: rotate(45deg);
+}
+
+.au-popover--bottom .au-popover__arrow {
+  top: -0.35rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.au-popover--top .au-popover__arrow {
+  bottom: -0.35rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.au-popover--left .au-popover__arrow {
+  right: -0.35rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.au-popover--right .au-popover__arrow {
+  left: -0.35rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.au-popover-trigger {
+  cursor: pointer;
+  display: inline-flex;
+}

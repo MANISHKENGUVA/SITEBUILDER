@@ -1,0 +1,178 @@
+// Form control styles — ported from Artiqui's input, select and textarea contracts.
+// Existing `.form-*` markup keeps working across every workflow node.
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: $space-5;
+
+  &.form-group--inline {
+    flex-direction: row;
+    align-items: center;
+    gap: $space-4;
+    margin-bottom: 0;
+  }
+}
+
+.form-label {
+  display: block;
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: $font-weight-bold;
+  line-height: 1.4;
+  color: $color-text-secondary;
+}
+
+.form-label--required::after {
+  content: " *";
+  color: $color-error;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.72rem 0.85rem;
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  line-height: 1.4;
+  color: $color-text-primary;
+  background: $color-input-bg;
+  border: 1px solid $color-input-border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  box-sizing: border-box;
+  transition: border-color $transition-fast, box-shadow $transition-fast,
+    background-color $transition-fast;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: $color-border-medium;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-input-focus-border;
+    box-shadow: 0 0 0 3px rgba($color-spruce-base, 0.28);
+  }
+
+  &:disabled {
+    background: $neutral-100;
+    color: $text-disabled;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  &.error {
+    border-color: $danger-400;
+    background-color: $color-error-tint;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-error, 0.18);
+    }
+  }
+}
+
+.form-select {
+  appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M1 1.5 6 6.5l5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  cursor: pointer;
+}
+
+.form-textarea {
+  min-height: 5rem;
+  padding: 0.75rem 0.85rem;
+  resize: vertical;
+}
+
+.form-input[type="file"] {
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+}
+
+.form-hint {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  color: $color-text-muted;
+}
+
+.validation-message {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  color: $danger-700;
+  display: block;
+
+  &.validation-message--inline {
+    display: inline-block;
+    margin-left: $space-3;
+  }
+}
+
+.form-field--error {
+  .form-input,
+  .form-select,
+  .form-textarea {
+    border-color: $danger-400;
+    background-color: $color-error-tint;
+  }
+}
+
+.form-actions {
+  display: flex;
+  gap: $space-3;
+  justify-content: flex-end;
+  margin-top: $space-8;
+  padding-top: $space-6;
+  border-top: 1px solid $color-border-light;
+}
+
+// Radio and checkbox
+.form-radio,
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  cursor: pointer;
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    width: 1.08rem;
+    height: 1.08rem;
+    margin: 0;
+    accent-color: $color-spruce-base;
+    cursor: pointer;
+  }
+
+  &:hover {
+    color: $color-text-primary;
+  }
+
+  &.disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+}
+
+.form-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-4;
+}
+
+.form-fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}

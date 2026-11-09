@@ -1,0 +1,51 @@
+// Color palette — Northline Loan Workflow Portal
+// Mapped to the Artiqui Indigo theme so the app shell and the shared
+// Artiqui components share one visual language.
+
+// Brand / primary — Indigo Depth (Artiqui theme1)
+$color-spruce-tint: #f0f1ff;
+$color-spruce-base: #6674f4;
+$color-spruce-shade: #4455e8;
+
+// Secondary — Amber Prestige (Artiqui warning ramp)
+$color-brass-tint: #fffbeb;
+$color-brass-base: #d97706;
+$color-brass-shade: #b45309;
+
+// Neutral — Ink
+$color-ink-tint: #f9fafb;
+$color-ink-base: #111827;
+$color-ink-shade: #1f2937;
+
+// Semantic
+$color-success: #059669;
+$color-success-tint: #ecfdf5;
+$color-warning: #d97706;
+$color-warning-tint: #fffbeb;
+$color-error: #dc2626;
+$color-error-tint: #fef2f2;
+$color-info: #2563eb;
+$color-info-tint: #eff6ff;
+
+// Backgrounds
+$color-bg-body: #f7f8fb;
+$color-bg-surface: #ffffff;
+$color-bg-sidebar: #ffffff;
+
+// Text
+$color-text-primary: #111827;
+$color-text-secondary: #374151;
+$color-text-muted: #6b7280;
+$color-text-inverse: #ffffff;
+
+// Borders
+$color-border-light: #e5e7eb;
+$color-border-medium: #d1d5db;
+$color-border-focus: #6674f4;
+
+// Component-specific
+$color-card-bg: #ffffff;
+$color-card-border: #e5e7eb;
+$color-input-bg: #ffffff;
+$color-input-border: #d8dee8;
+$color-input-focus-border: #6674f4;
