@@ -67,3 +67,4 @@ async function closePool() {
 }
 
 module.exports = { getPool, query, run, withTransaction, ping, closePool };
+

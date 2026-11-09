@@ -55,9 +55,9 @@
               <!-- Compare Checkbox -->
               <label class="compare-checkbox-label">
                 <input
+                  v-model="selectedForCompare"
                   type="checkbox"
                   :value="ver.id"
-                  v-model="selectedForCompare"
                   :disabled="selectedForCompare.length >= 2 && !selectedForCompare.includes(ver.id)"
                 />
                 <span>Compare</span>

@@ -1,7 +1,7 @@
 <template>
   <div class="catalogue-page">
     <AppHeader />
-    <main class="catalogue" id="main">
+    <main id="main" class="catalogue">
       <header class="catalogue__header">
         <p class="catalogue__eyebrow au-chip au-chip--default">Northline lending</p>
         <h1 class="catalogue__title">Choose a loan product</h1>

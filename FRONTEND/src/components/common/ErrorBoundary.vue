@@ -17,12 +17,6 @@ export default {
       error: null,
     };
   },
-  methods: {
-    resetError() {
-      this.error = null;
-      this.$emit("reset");
-    },
-  },
   // Vue 2 error capture
   errorCaptured(err, vm, info) {
     this.error = {
@@ -30,6 +24,12 @@ export default {
       info,
     };
     return false;
+  },
+  methods: {
+    resetError() {
+      this.error = null;
+      this.$emit("reset");
+    },
   },
 };
 </script>

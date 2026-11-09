@@ -9,8 +9,8 @@
       </p>
     </div>
     <component
-      v-else
       :is="resolved"
+      v-else
       :node-key="nodeKey"
       :session-id="sessionId"
       :can-submit="canSubmit"

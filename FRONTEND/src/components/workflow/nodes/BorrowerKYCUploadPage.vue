@@ -7,7 +7,7 @@
         not configured. Production requires an uploaded file URL.
       </p>
     </header>
-    <form class="node-form" @submit.prevent="onSubmit" novalidate>
+    <form class="node-form" novalidate @submit.prevent="onSubmit">
       <div class="form-group">
         <label class="form-label" for="aadhaarFile">Aadhaar document <span class="form-label--required" /></label>
         <input id="aadhaarFile" type="file" class="form-input" accept=".pdf,.jpg,.jpeg,.png" @change="onFile('aadhaar', $event)" />

@@ -1,7 +1,7 @@
 <template>
   <div
-    class="visual-canvas-container"
     ref="container"
+    class="visual-canvas-container"
     tabindex="0"
     @wheel.prevent="onWheel"
     @mousedown="onMouseDownBackground"
@@ -10,8 +10,8 @@
     @keydown.delete="onDeleteKey"
   >
     <svg
-      class="canvas-svg"
       ref="svg"
+      class="canvas-svg"
       :width="canvasWidth"
       :height="canvasHeight"
     >
@@ -280,7 +280,7 @@
 </template>
 
 <script>
-import { NODE_TYPES, NODE_TYPE_INFO } from "../types/nodeTypes";
+import { NODE_TYPE_INFO } from "../types/nodeTypes";
 
 export default {
   name: "VisualCanvas",

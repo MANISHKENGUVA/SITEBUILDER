@@ -7,10 +7,10 @@
         thresholds are not evaluated in this form.
       </p>
     </header>
-    <form class="node-form" @submit.prevent="onSubmit" novalidate>
+    <form class="node-form" novalidate @submit.prevent="onSubmit">
       <div class="form-group">
         <label class="form-label" for="employmentType">Employment type <span class="form-label--required" /></label>
-        <select id="employmentType" class="form-select" :class="{ error: errors.employmentType }" v-model="form.employmentType">
+        <select id="employmentType" v-model="form.employmentType" class="form-select" :class="{ error: errors.employmentType }">
           <option value="">Select</option>
           <option value="SALARIED">Salaried</option>
           <option value="BUSINESS_OWNER">Business owner</option>
@@ -21,22 +21,22 @@
       <div v-if="form.employmentType === 'SALARIED'" class="form-grid">
         <div class="form-group">
           <label class="form-label" for="employerName">Employer name <span class="form-label--required" /></label>
-          <input id="employerName" class="form-input" :class="{ error: errors.employerName }" v-model="form.employerName" />
+          <input id="employerName" v-model="form.employerName" class="form-input" :class="{ error: errors.employerName }" />
           <p v-if="errors.employerName" class="validation-message">{{ errors.employerName }}</p>
         </div>
         <div class="form-group">
           <label class="form-label" for="designation">Designation</label>
-          <input id="designation" class="form-input" v-model="form.designation" />
+          <input id="designation" v-model="form.designation" class="form-input" />
         </div>
       </div>
       <div v-if="form.employmentType === 'BUSINESS_OWNER'" class="form-group">
         <label class="form-checkbox">
-          <input type="checkbox" v-model="form.registrationExists" />
+          <input v-model="form.registrationExists" type="checkbox" />
           This is a registered business
         </label>
         <p v-if="errors.registrationExists" class="validation-message">{{ errors.registrationExists }}</p>
         <label class="form-label" for="registrationNumber">Registration number</label>
-        <input id="registrationNumber" class="form-input" v-model="form.registrationNumber" />
+        <input id="registrationNumber" v-model="form.registrationNumber" class="form-input" />
       </div>
       <div class="form-actions">
         <button type="submit" class="btn btn--primary au-button au-button--primary" :disabled="!canSubmit || submitting">

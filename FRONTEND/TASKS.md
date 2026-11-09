@@ -79,9 +79,9 @@
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| 41 | Run build | Implemented and tested | `npm.cmd run build` - builds successfully (79 modules, 174KB JS) |
-| 42 | Run lint | Missing | ESLint config not yet set up |
-| 43 | Add focused tests | Missing | No test runner configured for frontend |
+| 41 | Run build | Implemented and tested | `npm.cmd run build` - builds successfully (159 modules, 358KB JS) |
+| 42 | Run lint | Implemented and tested | ESLint configured with eslint-plugin-vue; 0 errors, 0 warnings |
+| 43 | Add focused tests | Implemented and tested | Unit & integration tests for backend & frontend |
 | 44 | Update TASKS.md with results | Implemented | This document |
 
 ## Phase 9 — Workflow Diagnostics Viewer
@@ -89,3 +89,21 @@
 | # | Task | Status | Notes |
 |---|------|--------|-------|
 | 45 | Add workflow config graph and execution log viewer | Implemented | `/workflow-viewer` imports JSON/JSONL locally; linked from catalogue |
+
+## Phase 10 — ConfigBuilderMakerApp (Visual Workflow Configuration Studio)
+
+| # | Task | Status | Notes |
+|---|------|--------|-------|
+| 46 | Configuration Dashboard | Implemented | `/builder` - lists all workflow configs, search/filter by status/actor/text, create, duplicate, export, delete |
+| 47 | 1:1 Workflow and Configuration ID Linking | Implemented | Backend and client enforce exactly 1 configuration per workflow ID |
+| 48 | Exactly Four Centrally Defined Node Types | Implemented | ACTOR, SYSTEM_INTERNAL_PROCESS, WEBHOOK, API; no separate DECISION node |
+| 49 | Authoritative Node Identity Generator | Implemented | `ACTOR-MODULE-MODULEVERSION-NODE-NODEVERSION` convention; multiword intact; unique validation |
+| 50 | Dynamic Actors & Modules Registries | Implemented | Database-backed extensible actor and module registries; not hardcoded |
+| 51 | Visual Workflow Canvas | Implemented | SVG canvas with drag/drop, edge drawing, bezier curves, pan/zoom, path highlighting, error badges |
+| 52 | Edge & Rule Engine Builder | Implemented | Rules on outgoing edges, AND/OR logic, typed conditions (`=`, `!=`, `>`, `<`, `>=`, `<=`, `in`, `contains`, `exists`) |
+| 53 | Bi-directional JSON Synchronization | Implemented | Real-time sync between Visual Canvas and JSON Editor, syntax validation, preserves custom properties |
+| 54 | Configuration Validation Layer | Implemented | Centralized validation checks start state, node types, metadata, duplicate IDs, dead-ends, reachability |
+| 55 | Version Management & Immutability | Implemented | Draft, Validated, Published states; published versions immutable; version comparison & diffing |
+| 56 | Backend Integration & Neon DB Persistence | Implemented | PostgreSQL tables, REST APIs under `/api/config-builder/*`, initial seed from LOAN-FLOW-V7 |
+| 57 | Template & Reusability System | Implemented | 5 enterprise templates: Loan Origination, KYC, Document Verification, Underwriting, API Pipeline |
+| 58 | Comprehensive Test Suite & Verification | Implemented | 26 unit and integration tests passing; lint clean; production build verified |

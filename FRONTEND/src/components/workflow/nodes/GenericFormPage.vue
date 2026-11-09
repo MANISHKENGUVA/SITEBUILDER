@@ -13,9 +13,9 @@
         <select
           v-if="field.type === 'select'"
           :id="field.name"
+          v-model="form[field.name]"
           class="form-select"
           :class="{ error: errors[field.name] }"
-          v-model="form[field.name]"
         >
           <option value="">Select</option>
           <option v-for="option in field.options" :key="option.value" :value="option.value">
@@ -25,20 +25,20 @@
         <textarea
           v-else-if="field.type === 'textarea'"
           :id="field.name"
-          class="form-textarea"
           v-model="form[field.name]"
+          class="form-textarea"
         />
         <label v-else-if="field.type === 'checkbox'" class="form-checkbox">
-          <input :id="field.name" type="checkbox" v-model="form[field.name]" />
+          <input :id="field.name" v-model="form[field.name]" type="checkbox" />
           {{ field.label }}
         </label>
         <input
           v-else
           :id="field.name"
+          v-model="form[field.name]"
           class="form-input"
           :class="{ error: errors[field.name] }"
           :type="field.type === 'number' ? 'number' : 'text'"
-          v-model="form[field.name]"
         />
         <p v-if="field.hint && field.type !== 'checkbox'" class="form-hint">{{ field.hint }}</p>
         <p v-if="errors[field.name]" class="validation-message">{{ errors[field.name] }}</p>

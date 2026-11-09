@@ -137,7 +137,7 @@ export function canonicalToVisualModel(canonicalJson, canvasLayoutPositions = {}
  * @param {Object} existingCanonical
  * @returns {Object} canonicalJson
  */
-export function visualModelToCanonical(visualModel, existingCanonical = {}) {
+export function visualModelToCanonical(visualModel) {
   if (!visualModel) return {};
 
   const {

@@ -11,7 +11,7 @@
       <aside class="workflow-shell__sidebar" aria-label="Application progress">
         <slot name="sidebar" />
       </aside>
-      <main class="workflow-shell__main" id="main">
+      <main id="main" class="workflow-shell__main">
         <slot name="main" />
       </main>
     </div>

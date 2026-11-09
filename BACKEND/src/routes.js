@@ -51,3 +51,4 @@ router.get("/config-builder/templates", configBuilder.listTemplates);
 router.get("/config-builder/templates/:id", configBuilder.getTemplate);
 
 module.exports = router;
+

@@ -7,16 +7,16 @@
         identifiers, not raw PAN or Aadhaar numbers.
       </p>
     </header>
-    <form class="node-form" @submit.prevent="onSubmit" novalidate>
+    <form class="node-form" novalidate @submit.prevent="onSubmit">
       <div class="form-grid">
         <div class="form-group">
           <label class="form-label" for="fullName">Full name <span class="form-label--required" /></label>
-          <input id="fullName" type="text" class="form-input" :class="{ error: errors.fullName }" v-model="form.fullName" autocomplete="name" />
+          <input id="fullName" v-model="form.fullName" type="text" class="form-input" :class="{ error: errors.fullName }" autocomplete="name" />
           <p v-if="errors.fullName" class="validation-message">{{ errors.fullName }}</p>
         </div>
         <div class="form-group">
           <label class="form-label" for="dateOfBirth">Date of birth <span class="form-label--required" /></label>
-          <input id="dateOfBirth" type="date" class="form-input" :class="{ error: errors.dateOfBirth }" v-model="form.dateOfBirth" />
+          <input id="dateOfBirth" v-model="form.dateOfBirth" type="date" class="form-input" :class="{ error: errors.dateOfBirth }" />
           <p v-if="errors.dateOfBirth" class="validation-message">{{ errors.dateOfBirth }}</p>
         </div>
         <div class="form-group">
@@ -24,7 +24,7 @@
             <legend class="form-label">Gender <span class="form-label--required" /></legend>
             <div class="form-radio-group">
               <label v-for="option in genders" :key="option" class="form-radio">
-                <input type="radio" name="gender" :value="option" v-model="form.gender" />
+                <input v-model="form.gender" type="radio" name="gender" :value="option" />
                 {{ option }}
               </label>
             </div>
@@ -33,27 +33,27 @@
         </div>
         <div class="form-group">
           <label class="form-label" for="pan">PAN <span class="form-label--required" /></label>
-          <input id="pan" type="text" class="form-input" maxlength="10" :class="{ error: errors.pan }" v-model="form.pan" autocomplete="off" />
+          <input id="pan" v-model="form.pan" type="text" class="form-input" maxlength="10" :class="{ error: errors.pan }" autocomplete="off" />
           <p v-if="errors.pan" class="validation-message">{{ errors.pan }}</p>
         </div>
         <div class="form-group">
           <label class="form-label" for="aadhaar">Aadhaar</label>
-          <input id="aadhaar" type="text" class="form-input" maxlength="12" inputmode="numeric" :class="{ error: errors.aadhaar }" v-model="form.aadhaar" autocomplete="off" />
+          <input id="aadhaar" v-model="form.aadhaar" type="text" class="form-input" maxlength="12" inputmode="numeric" :class="{ error: errors.aadhaar }" autocomplete="off" />
           <p v-if="errors.aadhaar" class="validation-message">{{ errors.aadhaar }}</p>
         </div>
         <div class="form-group">
           <label class="form-label" for="email">Email</label>
-          <input id="email" type="email" class="form-input" :class="{ error: errors.email }" v-model="form.email" autocomplete="email" />
+          <input id="email" v-model="form.email" type="email" class="form-input" :class="{ error: errors.email }" autocomplete="email" />
           <p v-if="errors.email" class="validation-message">{{ errors.email }}</p>
         </div>
         <div class="form-group">
           <label class="form-label" for="mobileNumber">Mobile number <span class="form-label--required" /></label>
-          <input id="mobileNumber" type="tel" class="form-input" maxlength="10" inputmode="numeric" :class="{ error: errors.mobileNumber }" v-model="form.mobileNumber" autocomplete="tel" />
+          <input id="mobileNumber" v-model="form.mobileNumber" type="tel" class="form-input" maxlength="10" inputmode="numeric" :class="{ error: errors.mobileNumber }" autocomplete="tel" />
           <p v-if="errors.mobileNumber" class="validation-message">{{ errors.mobileNumber }}</p>
         </div>
         <div class="form-group">
           <label class="form-label" for="loanPurpose">Loan purpose</label>
-          <input id="loanPurpose" type="text" class="form-input" v-model="form.loanPurpose" />
+          <input id="loanPurpose" v-model="form.loanPurpose" type="text" class="form-input" />
         </div>
       </div>
       <div class="form-actions">

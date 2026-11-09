@@ -2,7 +2,7 @@
   <div class="config-dashboard">
     <AppHeader />
 
-    <main class="dashboard-main" id="main">
+    <main id="main" class="dashboard-main">
       <!-- Dashboard Hero / Header -->
       <header class="dashboard-header">
         <div class="dashboard-header__content">
@@ -201,7 +201,7 @@
           <button type="button" class="close-btn" @click="showNewModal = false">✕</button>
         </div>
 
-        <form @submit.prevent="submitCreateConfig" class="modal-body">
+        <form class="modal-body" @submit.prevent="submitCreateConfig">
           <p class="modal-hint">
             Every workflow configuration has a unique 1:1 relationship with a workflow ID.
           </p>
@@ -302,7 +302,7 @@
           <button type="button" class="close-btn" @click="showDuplicateModal = false">✕</button>
         </div>
 
-        <form @submit.prevent="submitDuplicateConfig" class="modal-body">
+        <form class="modal-body" @submit.prevent="submitDuplicateConfig">
           <p class="modal-hint">
             Creates an independent copy of <strong>{{ configToDuplicate?.id }}</strong> with new unique IDs.
           </p>

@@ -4,42 +4,42 @@
       <h1 class="node-page__title">Address</h1>
       <p class="node-page__description">Current residential address for this applicant.</p>
     </header>
-    <form class="node-form" @submit.prevent="onSubmit" novalidate>
+    <form class="node-form" novalidate @submit.prevent="onSubmit">
       <div class="form-grid">
         <div class="form-group">
           <label class="form-label" for="flatNo">Flat / house no.</label>
-          <input id="flatNo" class="form-input" v-model="form.flatNo" />
+          <input id="flatNo" v-model="form.flatNo" class="form-input" />
         </div>
         <div class="form-group">
           <label class="form-label" for="building">Building</label>
-          <input id="building" class="form-input" v-model="form.building" />
+          <input id="building" v-model="form.building" class="form-input" />
         </div>
         <div class="form-group">
           <label class="form-label" for="street">Street <span class="form-label--required" /></label>
-          <input id="street" class="form-input" :class="{ error: errors.street }" v-model="form.street" />
+          <input id="street" v-model="form.street" class="form-input" :class="{ error: errors.street }" />
           <p v-if="errors.street" class="validation-message">{{ errors.street }}</p>
         </div>
         <div class="form-group">
           <label class="form-label" for="landmark">Landmark</label>
-          <input id="landmark" class="form-input" v-model="form.landmark" />
+          <input id="landmark" v-model="form.landmark" class="form-input" />
         </div>
         <div class="form-group">
           <label class="form-label" for="city">City <span class="form-label--required" /></label>
-          <input id="city" class="form-input" :class="{ error: errors.city }" v-model="form.city" />
+          <input id="city" v-model="form.city" class="form-input" :class="{ error: errors.city }" />
           <p v-if="errors.city" class="validation-message">{{ errors.city }}</p>
         </div>
         <div class="form-group">
           <label class="form-label" for="district">District</label>
-          <input id="district" class="form-input" v-model="form.district" />
+          <input id="district" v-model="form.district" class="form-input" />
         </div>
         <div class="form-group">
           <label class="form-label" for="state">State <span class="form-label--required" /></label>
-          <input id="state" class="form-input" :class="{ error: errors.state }" v-model="form.state" />
+          <input id="state" v-model="form.state" class="form-input" :class="{ error: errors.state }" />
           <p v-if="errors.state" class="validation-message">{{ errors.state }}</p>
         </div>
         <div class="form-group">
           <label class="form-label" for="pincode">Pincode <span class="form-label--required" /></label>
-          <input id="pincode" class="form-input" maxlength="6" inputmode="numeric" :class="{ error: errors.pincode }" v-model="form.pincode" />
+          <input id="pincode" v-model="form.pincode" class="form-input" maxlength="6" inputmode="numeric" :class="{ error: errors.pincode }" />
           <p v-if="errors.pincode" class="validation-message">{{ errors.pincode }}</p>
         </div>
       </div>

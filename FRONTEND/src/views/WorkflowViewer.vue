@@ -1,7 +1,7 @@
 <template>
   <div class="workflow-viewer">
     <AppHeader />
-    <main class="viewer" id="main">
+    <main id="main" class="viewer">
       <header class="viewer__header">
         <div>
           <p class="viewer__eyebrow">Workflow tools</p>

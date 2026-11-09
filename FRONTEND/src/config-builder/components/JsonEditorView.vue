@@ -18,8 +18,8 @@
         <button
           type="button"
           class="btn btn--sm btn--secondary au-button"
-          @click="formatJson"
           title="Format and Indent JSON"
+          @click="formatJson"
         >
           Format JSON
         </button>
@@ -27,8 +27,8 @@
         <button
           type="button"
           class="btn btn--sm btn--secondary au-button"
-          @click="copyJson"
           title="Copy JSON to Clipboard"
+          @click="copyJson"
         >
           {{ copied ? "Copied! ✓" : "Copy JSON" }}
         </button>
@@ -36,8 +36,8 @@
         <button
           type="button"
           class="btn btn--sm btn--secondary au-button"
-          @click="downloadJson"
           title="Export Workflow JSON to File"
+          @click="downloadJson"
         >
           Export JSON
         </button>

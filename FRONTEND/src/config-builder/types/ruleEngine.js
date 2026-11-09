@@ -21,3 +21,4 @@ export const VALUE_TYPES = Object.freeze([
   { value: "boolean", label: "Boolean (true/false)" },
   { value: "json", label: "JSON / Array" },
 ]);
+

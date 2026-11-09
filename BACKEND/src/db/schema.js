@@ -62,3 +62,4 @@ async function initSchema() {
 }
 
 module.exports = { initSchema };
+

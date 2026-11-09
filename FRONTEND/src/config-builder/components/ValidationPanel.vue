@@ -54,11 +54,11 @@
               {{ issue.level }}
             </div>
             <div class="issue-details">
-              <div class="issue-target" v-if="issue.nodeKey">
+              <div v-if="issue.nodeKey" class="issue-target">
                 Node: <code>{{ issue.nodeKey }}</code>
                 <span v-if="issue.field" class="issue-field">({{ issue.field }})</span>
               </div>
-              <div class="issue-target" v-else-if="issue.field">
+              <div v-else-if="issue.field" class="issue-target">
                 Scope: <code>{{ issue.field }}</code>
               </div>
               <div class="issue-message">{{ issue.message }}</div>

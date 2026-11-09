@@ -90,3 +90,4 @@ export function ensureUniqueNodeId(baseId, existingIds, metadata = null) {
 
   return { id: candidate, metadata: newMeta };
 }
+

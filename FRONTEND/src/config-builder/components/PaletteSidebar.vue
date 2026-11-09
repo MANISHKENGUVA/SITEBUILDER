@@ -6,8 +6,8 @@
           type="button"
           class="palette__tab"
           :class="{ 'is-active': activeTab === 'nodes' }"
-          @click="activeTab = 'nodes'"
           title="Add Nodes"
+          @click="activeTab = 'nodes'"
         >
           Nodes
         </button>
@@ -15,8 +15,8 @@
           type="button"
           class="palette__tab"
           :class="{ 'is-active': activeTab === 'actors' }"
-          @click="activeTab = 'actors'"
           title="Dynamic Actors"
+          @click="activeTab = 'actors'"
         >
           Actors
         </button>
@@ -24,8 +24,8 @@
           type="button"
           class="palette__tab"
           :class="{ 'is-active': activeTab === 'modules' }"
-          @click="activeTab = 'modules'"
           title="Dynamic Modules"
+          @click="activeTab = 'modules'"
         >
           Modules
         </button>
@@ -33,8 +33,8 @@
           type="button"
           class="palette__tab"
           :class="{ 'is-active': activeTab === 'outline' }"
-          @click="activeTab = 'outline'"
           title="Workflow Nodes Outline"
+          @click="activeTab = 'outline'"
         >
           Outline ({{ canvasNodes.length }})
         </button>
@@ -234,7 +234,7 @@
 </template>
 
 <script>
-import { NODE_TYPES, NODE_TYPE_INFO } from "../types/nodeTypes";
+import { NODE_TYPE_INFO } from "../types/nodeTypes";
 
 export default {
   name: "PaletteSidebar",

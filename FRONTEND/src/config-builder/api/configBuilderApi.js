@@ -127,3 +127,4 @@ export async function createTemplateFromConfig(configId, payload) {
   const data = unwrap(response);
   return data.template;
 }
+

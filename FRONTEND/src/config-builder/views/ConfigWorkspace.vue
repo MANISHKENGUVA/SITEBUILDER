@@ -216,7 +216,7 @@ import {
 import { generateNodeId, ensureUniqueNodeId } from "../core/nodeIdentity";
 import { validateClientWorkflow } from "../core/validator";
 import { HistoryManager } from "../core/history";
-import { DEFAULT_NODE_TEMPLATES, NODE_TYPES } from "../types/nodeTypes";
+import { DEFAULT_NODE_TEMPLATES } from "../types/nodeTypes";
 import {
   getConfiguration,
   saveConfigurationDraft,

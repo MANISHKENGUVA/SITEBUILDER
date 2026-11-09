@@ -69,7 +69,7 @@
         </div>
 
         <!-- Logic Operator: AND / OR -->
-        <div class="form-group" v-if="conditions.length > 1">
+        <div v-if="conditions.length > 1" class="form-group">
           <label>Logical Combinator</label>
           <div class="operator-toggle">
             <button

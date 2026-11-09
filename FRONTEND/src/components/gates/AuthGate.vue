@@ -23,11 +23,11 @@
       <form v-if="selectedMethod" class="gate__form" @submit.prevent="onSubmit">
         <div v-if="!challengeId" class="form-group">
           <label class="form-label" for="subject">{{ subjectLabel }}</label>
-          <input id="subject" class="form-input" v-model="subject" autocomplete="off" />
+          <input id="subject" v-model="subject" class="form-input" autocomplete="off" />
         </div>
         <div v-else class="form-group">
           <label class="form-label" for="code">One-time code</label>
-          <input id="code" class="form-input" maxlength="6" inputmode="numeric" v-model="code" autocomplete="one-time-code" />
+          <input id="code" v-model="code" class="form-input" maxlength="6" inputmode="numeric" autocomplete="one-time-code" />
           <p v-if="devCode" class="form-hint">Development code: {{ devCode }}</p>
         </div>
         <p v-if="authError" class="gate__error" role="alert">{{ authError }}</p>

@@ -117,3 +117,4 @@ export const DEFAULT_NODE_TEMPLATES = Object.freeze({
     edges: {},
   },
 });
+

@@ -228,3 +228,4 @@ export default {
   background: $color-bg-body;
 }
 </style>
+
