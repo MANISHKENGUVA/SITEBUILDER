@@ -103,34 +103,10 @@ export default {
   }
 
   .header__nav {
-  display: flex;
-  align-items: center;
-  gap: $space-4;
-}
-
-.nav-link {
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-  color: $color-text-secondary;
-  padding: $space-2 $space-3;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.15s ease;
-
-  &:hover {
-    color: $color-text-primary;
-    background: $color-bg-body;
-    text-decoration: none;
+    display: none;
   }
 
-  &.is-active {
-    color: $color-spruce-base;
-    background: #e6f4f6;
-    font-weight: $font-weight-semibold;
-  }
-}
-
-.header__menu {
+  .header__menu {
     display: inline-flex;
   }
 }

@@ -4,8 +4,8 @@
  * Provides bidirectional conversion between Canonical Workflow JSON and the
  * internal Visual Canvas model, preserving custom properties and unknown fields.
  */
-import { generateNodeId } from "./nodeIdentity";
-import { NODE_TYPES } from "../types/nodeTypes";
+import { generateNodeId } from "./nodeIdentity.js";
+import { NODE_TYPES } from "../types/nodeTypes.js";
 
 /**
  * Transforms Canonical JSON into Visual Canvas Model.

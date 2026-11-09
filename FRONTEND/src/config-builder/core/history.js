@@ -23,11 +23,19 @@ export class HistoryManager {
   }
 
   undo(currentState) {
-    if (!this.canUndo) return null;
-    if (currentState) {
-      const currentSerialized = typeof currentState === "string" ? currentState : JSON.stringify(currentState);
+    if (this.undoStack.length === 0) return null;
+    const currentSerialized = currentState
+      ? (typeof currentState === "string" ? currentState : JSON.stringify(currentState))
+      : null;
+
+    if (currentSerialized && this.undoStack[this.undoStack.length - 1] === currentSerialized) {
+      const top = this.undoStack.pop();
+      this.redoStack.push(top);
+    } else if (currentSerialized) {
       this.redoStack.push(currentSerialized);
     }
+
+    if (this.undoStack.length === 0) return null;
     const previous = this.undoStack.pop();
     try {
       return JSON.parse(previous);
@@ -37,16 +45,16 @@ export class HistoryManager {
   }
 
   redo(currentState) {
-    if (!this.canRedo) return null;
+    if (this.redoStack.length === 0) return null;
+    const nextSerialized = this.redoStack.pop();
     if (currentState) {
       const currentSerialized = typeof currentState === "string" ? currentState : JSON.stringify(currentState);
       this.undoStack.push(currentSerialized);
     }
-    const next = this.redoStack.pop();
     try {
-      return JSON.parse(next);
+      return JSON.parse(nextSerialized);
     } catch {
-      return next;
+      return nextSerialized;
     }
   }
 

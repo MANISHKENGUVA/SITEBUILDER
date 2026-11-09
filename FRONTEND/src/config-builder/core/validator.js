@@ -2,8 +2,8 @@
  * Client-Side Configuration Validator.
  * Mirrors the authoritative backend validation rules for instant feedback in the IDE.
  */
-import { NODE_TYPES } from "../types/nodeTypes";
-import { generateNodeId } from "./nodeIdentity";
+import { NODE_TYPES } from "../types/nodeTypes.js";
+import { generateNodeId } from "./nodeIdentity.js";
 
 export function validateClientWorkflow(canonicalJson, workflowId, configurationId) {
   const issues = [];
